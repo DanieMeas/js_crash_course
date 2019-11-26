@@ -28,9 +28,17 @@ function rpsGame(yourChoice) {
   console.log(yourChoice);
   var humanChoice, botChoice;
   //humanChoice = yourChoice.id;
-  //botChoice = 
+  botChoice = numberToChoice(randToRpsInt());
+  console.log(botChoice);
   //results = decideWinner(humanChoice, botChoice); //may return an array.
   //message = finalMessage(results); //{message:"you won", 'color': 'green'} an object.
-  rpsFrontEnd(yourChoice.id, botChoice, message);
+  //rpsFrontEnd(yourChoice.id, botChoice, message);
 }
 
+function randToRpsInt() {
+  return Math.floor(Math.random() * 3);
+}
+
+function numberToChoice(number) {
+  return ['rock', 'paper', 'scissors'][number];
+}
