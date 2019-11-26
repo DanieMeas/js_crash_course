@@ -23,4 +23,14 @@ function generateCat() {
 
 }
 
-//Challenge 2: Rock, Paper, Scissor
+//Challenge 2: Rock, Paper, Scissor 
+function rpsGame(yourChoice) {
+  console.log(yourChoice);
+  var humanChoice, botChoice;
+  //humanChoice = yourChoice.id;
+  //botChoice = 
+  //results = decideWinner(humanChoice, botChoice); //may return an array.
+  //message = finalMessage(results); //{message:"you won", 'color': 'green'} an object.
+  rpsFrontEnd(yourChoice.id, botChoice, message);
+}
+
