@@ -29,7 +29,7 @@ function rpsGame(yourChoice) {
   var humanChoice, botChoice;
   humanChoice = yourChoice.id;
   botChoice = numberToChoice(randToRpsInt());
-  console.log('computerChoice:',botChoice);
+  console.log('computerChoice:', botChoice);
   results = decideWinner(humanChoice, botChoice); //may return an array.
   console.log(results);
   //message = finalMessage(results); //{message:"you won", 'color': 'green'} an object.
