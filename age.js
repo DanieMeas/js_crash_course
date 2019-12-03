@@ -32,7 +32,8 @@ function rpsGame(yourChoice) {
   console.log('computerChoice:', botChoice);
   results = decideWinner(humanChoice, botChoice); //may return an array.
   console.log(results);
-  //message = finalMessage(results); //{message:"you won", 'color': 'green'} an object.
+  message = finalMessage(results); //{message:"you won", 'color': 'green'} an object.
+  console.log(message);
   //rpsFrontEnd(yourChoice.id, botChoice, message);
 }
 
