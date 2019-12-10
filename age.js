@@ -143,4 +143,10 @@ function buttonColorReset() {
 function randomColors() {
   var choices = ['btn-primary', 'btn-danger', 'btn-success', 'btn-warning']
 
+  for (let i=0; i < all_buttons.length; i++) {
+    var randomNumber = Math.floor(Math.random() * 4);
+    all_buttons[i].classList.remove(all_buttons[1]);
+    all_buttons[i].classList.add(choices[randomNumber]);
+  }
+
 }
