@@ -167,6 +167,8 @@ document.querySelector('#blackjack-deal-button').addEventListener('click', black
 
 function blackjackHit() {
   showCard(YOU);
+  showCard(DEALER);
+  
 }
 
 function showCard(activePlayer) {
@@ -178,6 +180,13 @@ hitSound.play();
 
 function blackjackDeal() {
   let yourImages = document.querySelector('#your-box').querySelectorAll('img');
-  console.log(yourImages);
+  let dealerImages = document.querySelector('#dealer-box').querySelectorAll('img');
 
+  for (i=0; i <yourImages.length; i++){
+    yourImages[i].remove();
+  }
+  for (i=0; i <dealerImages.length; i++){
+    dealerImages[i].remove();
+
+  }
 }
