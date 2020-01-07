@@ -171,7 +171,9 @@ function blackjackHit() {
   let card = randomCard();
   console.log(card);
   showCard(card, YOU);
-  
+  updateScore(card, YOU);
+  showScore(YOU);
+  console.log(YOU['score']);
   
 }
 
@@ -202,3 +204,8 @@ function randomCard() {
 function updateScore(card, activePlayer) {
   activePlayer['score'] += blackjackGame['cardsMap'][card];
 }
+
+function showScore(activePlayer) {
+  document.querySelector(activePlayer['scoreSpan']).textContent = activePlayer['score'];
+}
+
