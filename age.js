@@ -178,10 +178,12 @@ function blackjackHit() {
 }
 
 function showCard(card, activePlayer) {
-let cardImage = document.createElement('img');
-cardImage.src = `images/${card}.png`;
-document.querySelector(activePlayer['div']).appendChild(cardImage);
-hitSound.play();
+if (activePlayer['score'] <= 21){
+  let cardImage = document.createElement('img');
+  cardImage.src = `images/${card}.png`;
+  document.querySelector(activePlayer['div']).appendChild(cardImage);
+  hitSound.play();
+  }
 }
 
 function blackjackDeal() {
@@ -209,7 +211,7 @@ function updateScore(card, activePlayer) {
     } else {
       activePlayer['score'] += blackjackGame['cardsMap'][card][0];
     }
-    
+
   } else {
   activePlayer['score'] += blackjackGame['cardsMap'][card];
   }
