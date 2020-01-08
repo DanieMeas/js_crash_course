@@ -197,6 +197,8 @@ function blackjackDeal() {
     dealerImages[i].remove();
 
   }
+  YOU['score'] = 0;
+  DEALER['score'] = 0;
 }
 
 function randomCard() {
@@ -218,6 +220,11 @@ function updateScore(card, activePlayer) {
 }
 
 function showScore(activePlayer) {
+  if (activePlayer['score'] > 21) {
+    document.querySelector(activePlayer['scoreSpan']).textContent = 'BUST';
+    document.querySelector(activePlayer['scoreSpan']).style.color = 'red';
+  } else {
   document.querySelector(activePlayer['scoreSpan']).textContent = activePlayer['score'];
+  } 
 }
 
