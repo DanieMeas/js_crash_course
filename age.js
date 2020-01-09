@@ -244,3 +244,11 @@ function dealerLogic() {
   showScore(DEALER);
 }
 
+//compute winner and return who just won
+function computeWinner() {
+  let winner;
+
+  if (YOU['score'] <= 21) {
+    
+  }
+}
