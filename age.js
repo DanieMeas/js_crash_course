@@ -261,5 +261,9 @@ function computeWinner() {
     } else if (YOU['score'] === DEALER['score']) {
       console.log('YOU DREW!');
     }
+  //condition: when user busts but dealer doesn't
+  } else if (YOU['score'] > 21 && DEALER['score' <= 21) {
+    console.log('YOU LOST');
+    winner = DEALER;
   }
 }
