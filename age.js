@@ -249,6 +249,17 @@ function computeWinner() {
   let winner;
 
   if (YOU['score'] <= 21) {
-    
+    //condition: higher score than delaer or when dealer busts you're 21 under.
+    if(YOU['score'] > DEALER['score'] ||(DEALER['score'] > 21)) {
+      console.log('YOU WON!');
+      winner = YOU;
+
+    } else if (YOU['score'] < DEALER['score']) {
+      console.log('YOU LOST!');
+      winner = DEALER;
+
+    } else if (YOU['score'] === DEALER['score']) {
+      console.log('YOU DREW!');
+    }
   }
 }
