@@ -190,6 +190,7 @@ if (activePlayer['score'] <= 21){
 }
 
 function blackjackDeal() {
+  computeWinner();
   let yourImages = document.querySelector('#your-box').querySelectorAll('img');
   let dealerImages = document.querySelector('#dealer-box').querySelectorAll('img');
 
@@ -242,6 +243,7 @@ function dealerLogic() {
   showCard(card, DEALER);
   updateScore(card, DEALER);
   showScore(DEALER);
+
 }
 
 //compute winner and return who just won
@@ -271,5 +273,7 @@ function computeWinner() {
     console.log('YOU DREW!');
   }
 
+
+  console.log('Winner is', winner);
   return winner;
 }
