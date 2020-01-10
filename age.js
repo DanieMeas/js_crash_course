@@ -192,7 +192,6 @@ if (activePlayer['score'] <= 21){
 }
 
 function blackjackDeal() {
-  computeWinner();
   let yourImages = document.querySelector('#your-box').querySelectorAll('img');
   let dealerImages = document.querySelector('#dealer-box').querySelectorAll('img');
 
@@ -245,6 +244,7 @@ function dealerLogic() {
   showCard(card, DEALER);
   updateScore(card, DEALER);
   showScore(DEALER);
+  showResult(computeWinner());
 
 }
 
@@ -279,6 +279,25 @@ function computeWinner() {
   console.log('Winner is', winner);
   return winner;
 }
-showResult(winner) {
+function showResult(winner) {
+  let message, messageColor;
+
+  if (winner === YOU) {
+    message = 'You Won!';
+    messageColor = 'green';
+    windSound.play();
+
+  } else if (winner === DEALER){
+    message = 'You lost!';
+    messageColor = 'red';
+    lossSound.play();
+
+  } else {
+    message = 'You drew!';
+    messageColor = 'black';
+  }
+
+  document.querySelector('#blackjack-result').textContent = message;
+  document.querySelector('#blackjack-result').style.color = messageColor;
 
 }
