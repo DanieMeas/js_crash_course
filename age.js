@@ -163,6 +163,8 @@ const YOU = blackjackGame['you']
 const DEALER = blackjackGame['dealer']
 
 const hitSound = new Audio('sounds/swish.m4a');
+const windSound = new Audio('sounds/cash.mp3');
+const lossSound = new Audio('sounds/aww.mp3');
 
 document.querySelector('#blackjack-hit-button').addEventListener('click', blackjackHit);
 
@@ -276,4 +278,7 @@ function computeWinner() {
 
   console.log('Winner is', winner);
   return winner;
+}
+showResult(winner) {
+
 }
