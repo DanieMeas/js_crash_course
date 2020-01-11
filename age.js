@@ -305,25 +305,27 @@ function computeWinner() {
 function showResult(winner) {
   let message, messageColor;
 
-  if (winner === YOU) {
-    document.querySelector('#wins').textContent = blackjackGame['wins'];
-    message = 'You Won!';
-    messageColor = 'green';
-    windSound.play();
+  if (blackjackGame['turnsOver'] === true) {
 
-  } else if (winner === DEALER){
-    document.querySelector('#losses').textContent = blackjackGame['losses'];
-    message = 'You lost!';
-    messageColor = 'red';
-    lossSound.play();
+    if (winner === YOU) {
+      document.querySelector('#wins').textContent = blackjackGame['wins'];
+      message = 'You Won!';
+      messageColor = 'green';
+      windSound.play();
 
-  } else {
-    document.querySelector('#draws').textContent = blackjackGame['draws'];
-    message = 'You drew!';
-    messageColor = 'black';
+    } else if (winner === DEALER){
+      document.querySelector('#losses').textContent = blackjackGame['losses'];
+      message = 'You lost!';
+      messageColor = 'red';
+      lossSound.play();
+
+    } else {
+      document.querySelector('#draws').textContent = blackjackGame['draws'];
+      message = 'You drew!';
+      messageColor = 'black';
+    }
+
+    document.querySelector('#blackjack-result').textContent = message;
+    document.querySelector('#blackjack-result').style.color = messageColor;
   }
-
-  document.querySelector('#blackjack-result').textContent = message;
-  document.querySelector('#blackjack-result').style.color = messageColor;
-
 }
