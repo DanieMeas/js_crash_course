@@ -214,6 +214,9 @@ function blackjackDeal() {
 
   document.querySelector('#your-blackjack-result').style.color = '#ffffff';
   document.querySelector('#dealer-blackjack-result').style.color = '#ffffff';
+
+  document.querySelector('#blackjack-result').textContent = "Let's play";
+  document.querySelector('#blackjack-result').style.color = "black";
 }
 
 function randomCard() {
